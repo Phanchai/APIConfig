@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "UFbWT/5JxSYxq1nFxkf4L+njUSDwlIHRqGhicLHCdeE=",
+  "Source": "APIConfig",
+  "BasePath": "_content/APIConfig",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "APIConfig/wwwroot",
+      "Source": "APIConfig",
+      "ContentRoot": "/Users/admin/Desktop/API/APIConfig/APIConfig/wwwroot/",
+      "BasePath": "_content/APIConfig",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/admin/Desktop/API/APIConfig/APIConfig/wwwroot/COPYRIGHT.txt",
+      "SourceId": "APIConfig",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/admin/Desktop/API/APIConfig/APIConfig/wwwroot/",
+      "BasePath": "_content/APIConfig",
+      "RelativePath": "COPYRIGHT.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/COPYRIGHT.txt"
+    },
+    {
+      "Identity": "/Users/admin/Desktop/API/APIConfig/APIConfig/wwwroot/GeoLite2-Country.mmdb",
+      "SourceId": "APIConfig",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/admin/Desktop/API/APIConfig/APIConfig/wwwroot/",
+      "BasePath": "_content/APIConfig",
+      "RelativePath": "GeoLite2-Country.mmdb",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/GeoLite2-Country.mmdb"
+    },
+    {
+      "Identity": "/Users/admin/Desktop/API/APIConfig/APIConfig/wwwroot/LICENSE.txt",
+      "SourceId": "APIConfig",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/admin/Desktop/API/APIConfig/APIConfig/wwwroot/",
+      "BasePath": "_content/APIConfig",
+      "RelativePath": "LICENSE.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/LICENSE.txt"
+    }
+  ]
+}
