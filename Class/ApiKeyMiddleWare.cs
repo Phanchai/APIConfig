@@ -8,7 +8,7 @@ namespace APIConfig.Class
     {
         private readonly IConfiguration Configuration;
         private readonly RequestDelegate _next;
-        private const string API_KEY = "Api_Key";  // ใช้ชื่อ header สำหรับ API Key
+        private const string API_KEY = "ApiKey";  // ใช้ชื่อ header สำหรับ API Key
         private readonly string _apiKey;
 
         public ApiKeyMiddleware(RequestDelegate next, IConfiguration configuration)

@@ -141,3 +141,4 @@
 /Users/admin/Desktop/API/APIConfig/APIConfig/bin/Debug/net8.0/MaxMind.Db.dll
 /Users/admin/Desktop/API/APIConfig/APIConfig/bin/Debug/net8.0/MaxMind.GeoIP2.dll
 /Users/admin/Desktop/API/APIConfig/APIConfig/bin/Debug/net8.0/System.Net.WebSockets.WebSocketProtocol.dll
+/Users/admin/Desktop/API/APIConfig/APIConfig/obj/Debug/net8.0/APIConfig.sourcelink.json

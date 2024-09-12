@@ -2,6 +2,7 @@
 using APIConfig.Class;
 using APIConfig.Interface;
 using APIConfig.Models;
+
 using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.SignalR;
+using APIConfig.Controllers;
+using Service;
+
+
 
 TokenSet tokenSet = new TokenSet();
 var builder = WebApplication.CreateBuilder(args);
@@ -32,9 +37,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
-builder.Services.AddScoped<UserReponitory>();
+
 builder.Services.AddSingleton(new TokenService(tokenSet.secretKey, tokenSet.Issuer, tokenSet.Audience));
+builder.Services.AddScoped<LogService>();
 builder.Services.AddSignalR();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",

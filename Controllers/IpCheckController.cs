@@ -45,7 +45,7 @@ namespace APIConfig.Controllers
 
                 if(countryInfo == "TH"){
                     
-                    var rsult = await _context.UserManagers.Where(a => a.PasswordSalt == ipAddress.ToString()).SingleOrDefaultAsync();
+                    var rsult = await _context.UserManagers.Where(a => a.Password == ipAddress.ToString()).SingleOrDefaultAsync();
                     if(rsult == null){
                         return NotFound("IP Invalid");
                     }

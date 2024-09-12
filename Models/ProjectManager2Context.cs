@@ -391,42 +391,44 @@ public partial class ProjectManager2Context : DbContext
             entity.ToTable("UserManager");
 
             entity.Property(e => e.Uid)
-                .IsRequired() // UId is a required field
-                .HasColumnName("Uid"); // Maps to the "Uid" column in the database
+                .IsRequired() 
+                .HasColumnName("Uid"); 
 
             entity.Property(e => e.Email)
-                .IsUnicode(false) // Email is stored as non-Unicode text
-                .HasColumnName("Email"); // Maps to the "Email" column in the database
+                .IsUnicode(false)
+                .HasColumnName("Email");
 
             // Configure the Username property
             entity.Property(e => e.Username)
-                .IsUnicode(false) // Username is stored as non-Unicode text
-                .HasColumnName("Username"); // Maps to the "Username" column in the database
+                .IsUnicode(false)
+                .HasColumnName("Username");
 
             // Configure the Password property
             entity.Property(e => e.Password)
-                .IsUnicode(false) // Password is stored as non-Unicode text
-                .HasColumnName("Password"); // Maps to the "Password" column in the database
+                .IsUnicode(false) 
+                .HasColumnName("Password");
 
-            // Configure the FirstName property
+
             entity.Property(e => e.FirstName)
-                .HasMaxLength(50) // Limits the length to 50 characters
-                .HasColumnName("FirstName"); // Maps to the "FirstName" column in the database
+                .HasMaxLength(50)
+                .HasColumnName("FirstName"); 
 
-            // Configure the LastName property
+
             entity.Property(e => e.LastName)
-                .HasMaxLength(50) // Limits the length to 50 characters
-                .HasColumnName("LastName"); // Maps to the "LastName" column in the database
+                .HasMaxLength(50) 
+                .HasColumnName("LastName"); 
 
-            // Configure the PasswordHash property
             entity.Property(e => e.PasswordHash)
-                .IsUnicode(false) // PasswordHash is stored as non-Unicode text
-                .HasColumnName("PasswordHash"); // Maps to the "PasswordHash" column in the database
+                .IsUnicode(false)
+                .HasColumnName("PasswordHash");
 
-            // Configure the PasswordSalt property
-            entity.Property(e => e.PasswordSalt)
-                .IsUnicode(false) // PasswordSalt is stored as non-Unicode text
-                .HasColumnName("PasswordSalt"); // Maps to the "PasswordSalt" column in the database
+            entity.Property(e => e.MidleName)
+                .HasMaxLength(50)
+                .HasColumnName("MidleName");
+
+            entity.Property(e => e.ipAddress)
+                .IsUnicode(false)
+                .HasColumnName("IPAddress");
         });
 
 

@@ -19,9 +19,9 @@ namespace APIConfig.Controllers
         }
 
         [HttpGet("sendlog")]
-        public async Task<IActionResult> SendLog(string message,string pages){
-            await _hubContext.Clients.All.SendAsync("ReceiveLog",message,pages);
-            return Ok("Success : ");
+        public async Task<IActionResult> SendLog(string message,string page){
+            await _hubContext.Clients.All.SendAsync("ReceiveLog",message,page);
+            return Ok("Log sent successfully.");
         }
     }
 }

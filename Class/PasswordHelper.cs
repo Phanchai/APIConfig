@@ -4,50 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace APIConfig.Class
 {
     public class PasswordHelper
     {
-        public static string HashPassword(string password)
+        public  string HashPassword(string password)
         {
-            // สร้าง salt
-            var salt = new byte[16];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
+            var hashed = new StringBuilder();
+            using (var hashAlgoritm = SHA256.Create()){
+                var bytes = hashAlgoritm.ComputeHash(Encoding.UTF8.GetBytes(password));
+                foreach(var @byte in bytes){
+                    hashed.Append(@byte.ToString("x2"));
+                }
             }
-            
-            // แฮชรหัสผ่าน
-            var hashed = KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA256,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8);
-            
-            // รวม salt กับ hashed password
-            var hashedPassword = Convert.ToBase64String(salt) + ":" + Convert.ToBase64String(hashed);
-            return hashedPassword;
-        }
-
-
-        public static bool VerifyPassword(string hashedPassword, string password)
-        {
-            var parts = hashedPassword.Split(':');
-            if (parts.Length != 2) return false;
-
-            var salt = Convert.FromBase64String(parts[0]);
-            var hash = Convert.FromBase64String(parts[1]);
-
-            var newHash = KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA256,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8);
-
-            return newHash.SequenceEqual(hash);
+            return hashed.ToString();
         }
     }
 }
